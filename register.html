@@ -8,7 +8,7 @@
         <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
         <link href="https://fonts.googleapis.com/css2?family=Kanit:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
         <!-- title -->
-            <title>FINANCE BANK HOME PAGE</title>
+            <title>FINANCE BANK-REGISTER</title>
             <!-- favicon -->
             <link rel="icon" href="https://media.istockphoto.com/id/1382305677/vector/finance-logo-vector-illustration-in-trendy.jpg?s=612x612&w=0&k=20&c=37WbXhqdKzvIq7kmltVoGZaBHcUE_Mhll23cyQpgij8=">
             <!-- bootstrap link -->
@@ -19,8 +19,71 @@
     *{
         font-family: "Kanit", sans-serif;
     }
+    body{
+        background-color:rgb(6, 65, 123);;
+    }
+    .login{
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        gap: 1rem;
+        border: 0px solid black;
+        margin: 5rem 32rem;
+
+        /* padding:5rem 7rem; */
+        background-color: white;
+        border-radius: 25px;
+        box-shadow: 00px 0px 5px 5px rgb(2, 42, 84);
+
+    }
+    .login input{
+        border-radius: 10px;
+        padding: .4rem 2rem;
+        border: 0;
+        width: 20rem;
+        box-shadow: 0px 0px 3px 3px rgb(2, 42, 84);
+    }
+    .login  button{
+        padding: .4rem 2rem;
+        border: 0;
+        border-radius: 10px;
+        box-shadow: 0px 0px 3px 3px rgb(2, 42, 84);
+        background-color:  rgb(2, 42, 84);
+        color: white;
+        font-weight: bold;
+        margin: 5rem 0px;
+
+
+    }
+    .login button:hover{
+        color: rgb(2, 42, 84);
+        background-color: white;
+        font-weight: bold;
+
+        box-shadow: 0px 0px 3px 3px rgba(2, 42, 84, 0.563);
+
+    }
 </style>
 <body>
+    <div class="login">
+
+        <div style="display: flex; margin: 1rem 0;">
+            <img width="70rem" src="https://media.istockphoto.com/id/1382305677/vector/finance-logo-vector-illustration-in-trendy.jpg?s=612x612&w=0&k=20&c=37WbXhqdKzvIq7kmltVoGZaBHcUE_Mhll23cyQpgij8=" alt="">
+        <h2 style="color:rgb(6, 65, 123) ; padding-top: 1rem; font-weight: bold;">FINANCE BANK </h2>
+        </div>
+
+        <div class="acc-no" style="display: flex;flex-direction: column; gap: 2rem;">
+
+                <input type="text" name="" id="accno" placeholder="User Name">
+                <input type="text" name="" id="accno" placeholder="Account Number">
+
+            <input type="text" name="" id="passw" placeholder="Password">
+        </div>
+        <button >Register</button>
+        <!-- <div style="padding: 1rem 0 2rem 0;">
+           <a href="">Register</a>
+
+        </div> -->
     
 </body>
 </html>

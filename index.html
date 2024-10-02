@@ -9,6 +9,8 @@
 <link href="https://fonts.googleapis.com/css2?family=Kanit:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
 <!-- title -->
     <title>FINANCE BANK HOME PAGE</title>
+    <!-- fontawsome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css" integrity="sha512-Kc323vGBEqzTmouAECnVceyQqyqdsSiqLQISBL29aUW4U/M7pSPA/gEUZQqv1cwx4OnYxTxve5UMg5GT6L4JJg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
     <!-- favicon -->
     <link rel="icon" href="https://media.istockphoto.com/id/1382305677/vector/finance-logo-vector-illustration-in-trendy.jpg?s=612x612&w=0&k=20&c=37WbXhqdKzvIq7kmltVoGZaBHcUE_Mhll23cyQpgij8=">
     <!-- bootstrap link -->
@@ -34,10 +36,190 @@
     .nav1 h2{
       padding-top: .7rem;
     }
-    .nav2{
+    .nav2,.nav3{
       display: flex;
       gap: 3rem;
+   
     }
+    .nav2 a {
+      text-decoration: none;
+      color: rgb(6, 65, 123);
+      font-weight: bold;
+  
+      padding-top: 1rem;
+    }
+    .nav3 button {
+      text-decoration: none;
+      color: rgb(6, 65, 123);
+      border: 0;
+      background-color: rgba(6, 64, 123, 0.399);
+      padding: 20px;
+       border-radius: 10px;
+      
+  
+    }
+    .nav2 a:hover{
+      font-weight: lighter;
+    }
+    .nav3 button:hover{
+      font-weight: bolder;
+      background-color: rgb(6, 65, 123);
+      color: white;
+    }
+    #content{
+      background:linear-gradient(to right,rgb(6, 65, 123),rgba(7, 122, 172, 0.537));
+      /* height: 30rem; */
+    }
+    .save{
+      color: white;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      padding-left: 4rem;
+      
+    }
+    .container {
+  position: relative;
+  width: 50%;
+}
+
+.image {
+  opacity: 1;
+  display: block;
+  width: 100%;
+  height: auto;
+  transition: .5s ease;
+  backface-visibility: hidden;
+  padding: 2rem;
+  
+}
+
+.middle {
+  transition: .5s ease;
+  opacity: 0;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  -ms-transform: translate(-50%, -50%)
+}
+
+.container:hover .image {
+  opacity: 0.3;
+}
+
+.container:hover .middle {
+  opacity: 1;
+}
+
+.text {
+  background-color: rgb(6, 65, 123);
+  color: white;
+  font-size: 30px;
+  padding: 16px 32px;
+  border-radius: 10px;
+  box-shadow: 0px 0px 5px 0px white;
+}
+.about-us button {
+      text-decoration: none;
+      color: rgb(6, 65, 123);
+      border: 0;
+      background-color: rgba(244, 244, 244, 0.399);
+      padding: 20px;
+       border-radius: 10px;
+      
+  
+    }
+    .about-us button:hover{
+      font-weight: bolder;
+      background-color: rgb(6, 65, 123);
+      color: white;
+    }
+    #advantage span{
+      font-weight: bold;
+    }
+    /* CSS */
+footer {
+  background-color:rgb(6, 65, 123);
+  color: #fff;
+  padding: 40px 0;
+  text-align: left;
+}
+
+.footer-container {
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  color: #fff;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 20px;
+}
+
+.footer-column {
+  flex: 1;
+  min-width: 250px;
+  color: #fff;
+  margin-bottom: 20px;
+}
+
+.footer-column h3 {
+  color: #ffffff;
+  margin-bottom: 15px;
+}
+
+.footer-column p, .footer-column ul, .footer-column li {
+  margin: 0;
+  padding: 0;
+  list-style-type: none;
+  color: #fff;
+}
+
+.footer-column ul {
+  margin-top: 10px;
+}
+
+.footer-column ul li {
+  margin-bottom: 10px;
+}
+
+.footer-column ul li a {
+  color: #fff;
+  text-decoration: none;
+}
+
+.footer-column ul li a:hover {
+  text-decoration: underline;
+}
+
+.social-icons {
+  display: flex;
+  
+}
+
+.social-icons li {
+  margin-right: 15px;
+  
+}
+
+.social-icons li a img {
+  width: 24px;
+  height: 24px;
+  color: #fff;
+}
+
+.footer-bottom {
+  background-color: rgba(10, 94, 177, 0.857);
+  padding: 20px 0;
+  text-align: center;
+  margin-top: 20px;
+}
+
+.footer-bottom p {
+  margin: 0;
+  color: #ccc;
+}
+
 </style>
 <body>
     <nav>
@@ -46,26 +228,129 @@
         <h2>FINANCE BANK </h2>
         </div>
         <div class="nav2">
-          <a href="">LogIn</a>
-          <a href="">Register</a>
+          <a href="#content">HOME</a>
+         <a href="#about"> ABOUT US</a>
+         <a href="#advantage">ADVANTAGES</a>
+         <a href="#contact">CONTACT US</a>
+         
+        </div>
+        <div class="nav3" >
+          <button>LogIn</button>
+          <button>Register</button>
+          
+          
         </div>
     </nav>
-    <!-- <div class="bannerr">
-        <div id="carouselExampleSlidesOnly" class="carousel slide" data-bs-ride="carousel">
-            <div class="carousel-inner">
-              <div class="carousel-item active">
-                <img src="https://static.vecteezy.com/system/resources/thumbnails/011/994/169/small_2x/icon-of-all-banking-services-cash-operations-payment-cards-icon-set-and-web-header-banner-illustration-vector.jpg" class="d-block w-100" alt="...">
-              </div>
-              <div class="carousel-item">
-                <img src="https://img.freepik.com/free-vector/banking-business-sale-banner-template_23-2150981676.jpg?uid=R142609337&ga=GA1.1.1867680056.1724607246&semt=ais_hybrid" class="d-block w-100" alt="...">
-              </div>
-              <div class="carousel-item">
-                <img src="..." class="d-block w-100" alt="...">
-              </div>
+    <div id="content">
+        <div class="row">
+          <div class="save col-6">
+            <p style="color: white; font-size: 1em; font-weight: lighter;">SAVE & MANAGE YOUR MONEY </p>
+            <h3 style="font-size: 7rem;">Banking</h3>
+            <h4 style="font-size: 4rem;">You Want
+            </h4>
+            <h6 style="font-size: 4rem;">To Use</h6>
+          </div>
+          <div class="col-6 container">
+            <img class="image"  src="https://www.idfcfirstbank.com/content/dam/idfcfirstbank/images/blog/mobile-banking/how-new-age-banking-is-transforming-the-banking-industry-717x404.jpg" alt="">
+            <div class="middle">
+              <div class="text">JOINED 5.5 M  CLIENTS</div>
             </div>
           </div>
-    </div> -->
-    
+        </div>
+ 
+    </div>
+    <div class="onlinebanking" style="padding:7em 15rem;">
+      <CENter>
+        <h1>ONLINE BANKING</h1>
+
+      </CENter>
+      <p>Online banking revolutionizes how we manage finances, offering the convenience of accessing and controlling accounts anytime, anywhere. With features like real-time account monitoring, seamless fund transfers, and quick bill payments, it simplifies daily banking tasks. Mobile apps extend these services, enabling users to manage finances on the go. Security is paramount, with encryption and two-factor authentication ensuring transactions are safe. Beyond basic banking, users can apply for loans, manage investments, and set up savings plans, all from one platform. Online banking offers a flexible, secure, and efficient way to handle financial matters without needing to visit a branch.
+      </p>
+      
+    </div>
+    <div id="about">
+      <div class="about-us" style="padding:7em 15rem; background: linear-gradient(to right,rgb(6, 65, 123),rgba(7, 122, 172, 0.537));">
+        <center>
+          <h1 style=" color: white;">ABOUT US</h1>
+        </center>
+        <p style=" color: white;">At Finance Bank, we are committed to providing innovative and secure banking solutions that make managing your finances easier and more convenient. With a focus on customer satisfaction and cutting-edge technology, we have proudly served individuals, businesses, and communities with reliable banking services for 10 years. <br>
+
+          Our mission is to deliver a seamless banking experience, enabling you to access your accounts, transfer funds, pay bills, and achieve your financial goals from anywhere in the world. Whether through our user-friendly online platform or our mobile banking app, we ensure that efficiency, security, and simplicity are at the core of everything we do. <br>
+          
+          We believe in a customer-first approach, offering personalized financial solutions to meet your unique needs. From everyday banking to loans, investments, and savings plans, our team is dedicated to helping you succeed. With advanced security measures like encryption and two-factor authentication, your personal and financial information is always protected. <br>
+          
+          Join us at Finance Bank, where we are redefining the future of banking with innovation, trust, and a commitment to your financial well-being.</p>
+          <button>Get Started</button>
+        
+      </div>
+      
+    </div>
+    <div id="advantage">
+      <div class="about-us" style="padding:7em 15rem; ">
+        <center>
+          <h1 >Why Choose Finance Bank?</h1>
+        </center>
+        <p>At Finance Bank, we believe in delivering more than just banking services. Here are some key advantages of banking with us:</p>
+          <ul>
+            <li><span>Convenient Online Access: </span><br>
+              Manage your finances effortlessly from the comfort of your home or while on the go. Our online and mobile banking platforms provide you with 24/7 access to your accounts, allowing you to handle transactions, check balances, and pay bills anytime, anywhere.</li>
+            <li><span>Seamless Fund Transfers: </span><br>Easily transfer money between your accounts, to other banks, or even internationally with just a few clicks. We ensure that your transfers are fast, efficient, and secure.
+            <li><span>Advanced Security Measures: </span><br>
+              Your safety is our priority. With industry-leading encryption, firewalls, and two-factor authentication, we ensure that your personal and financial data is always protected from unauthorized access.
+
+            </li>
+            <li><span>Efficient Bill Payments              : </span><br>
+              Pay all your bills in one place with our quick and easy bill payment service. Set up recurring payments to avoid missed deadlines and late fees, giving you peace of mind.</li>
+            
+          </ul>
+        
+      </div>
+      
+    </div>
+    <!-- HTML -->
+<footer>
+  <div class="footer-container">
+    <div class="footer-column">
+      <h3>About Finance Bank</h3>
+      <p>Finance Bank is dedicated to providing secure and innovative banking services to help you manage your finances effortlessly. From online banking to personalized financial solutions, we're here to support your financial journey.</p>
+    </div>
+
+    <div class="footer-column">
+      <h3>Quick Links</h3>
+      <ul>
+        <li><a href="#">Home</a></li>
+        <li><a href="#">About Us</a></li>
+        <li><a href="#">Services</a></li>
+        <li><a href="#">Contact</a></li>
+        <li><a href="#">Support</a></li>
+      </ul>
+    </div>
+    <i class="fa-brands fa-instagram"></i>
+    <div class="footer-column">
+      <h3 id="contact">Contact Us</h3>
+      <ul>
+        <li>Email: support@financebank.com</li>
+        <li>Phone: +123 456 7890</li>
+        <li>Address: 123 Finance St, Dubai, UAE</li>
+      </ul>
+    </div>
+
+    <div class="footer-column">
+      <h3>Follow Us</h3>
+      <ul class="social-icons">
+        <li><a href="#">facebook</a></li>
+        <li><a href="#">twitter</a></li>
+        <li><a href="#">linkedin</a></li>
+        <li><a href="#">instagram </a></li>
+      </ul>
+    </div>
+  </div>
+
+  <div class="footer-bottom">
+    <p>&copy; 2024 Finance Bank. All rights reserved.</p>
+  </div>
+</footer>
+
     
     
 </body>
