@@ -16,6 +16,7 @@ function login() {
 
         if (accountDetails.password === pass) {
             alert("Login successful!");
+            localStorage.setItem("currentUser", accountDetails.userName);
             window.location.href = "userpage.html"; 
         } else {
             alert("Invalid password. Please try again.");
@@ -24,6 +25,7 @@ function login() {
         alert("Account not found. Please register.");
         window.location = './register.html'; 
     }
+
 }
 
 function register() {
@@ -40,8 +42,10 @@ function register() {
         password: password,
         balance: 0
     }
+       
     if (localStorage.getItem(accountNumber)) {
         alert("User already registered.");
+        window.location.href = "login.html"; 
         return;
     }
 
@@ -63,6 +67,9 @@ function goToLogin() {
 
 
 function goToRegister() {
+    window.location.href = './register.html';
+}
+function goToRegister1() {
     window.location.href = './register.html';
 }
 function deposit() {
@@ -126,6 +133,6 @@ function withdraw() {
     }
 }
 function logout() {
-    localStorage.removeItem("userAccount"); 
+    localStorage.clear("userAccount"); 
     window.location.href = './index.html';
 }

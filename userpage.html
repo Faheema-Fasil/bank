@@ -220,7 +220,7 @@
     <div class="content">
         <div class="user">
             <center>
-                <h1 style="padding-top: 20px;color: white;" id="weĺcome">Welcome User</h1>
+                <h1 style="padding-top: 20px;color: white;" id="welcome">Welcome User</h1>
                 <h5 style="padding-top: 20px; padding-bottom: 50px;color: white;">Online Banking Services
                 </h5>
             </center>
@@ -294,5 +294,15 @@
         </div>
       </footer>
 </body>
+<script>
+      var currentUser = localStorage.getItem("currentUser");
+
+// Check if there is a current user and update the welcome message
+if (currentUser) {
+    document.getElementById("welcome").innerText = `Welcome ${currentUser}`;
+} else {
+    document.getElementById("welcome").innerText = 'Welcome User';
+}
+</script>
 <script src="./script.js"></script>
 </html>
