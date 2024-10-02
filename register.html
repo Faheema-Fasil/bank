@@ -52,6 +52,7 @@
         color: white;
         font-weight: bold;
         margin: 5rem 0px;
+        cursor: pointer;
 
 
     }
@@ -74,16 +75,13 @@
 
         <div class="acc-no" style="display: flex;flex-direction: column; gap: 2rem;">
 
-                <input type="text" name="" id="accno" placeholder="User Name">
-                <input type="text" name="" id="accno" placeholder="Account Number">
+                <input type="text" name="" id="username" placeholder="User Name">
+                <input type="text" name="" id="regAccno" placeholder="Account Number">
 
-            <input type="text" name="" id="passw" placeholder="Password">
+            <input type="password" name="" id="regPassw" placeholder="Password">
         </div>
-        <button >Register</button>
-        <!-- <div style="padding: 1rem 0 2rem 0;">
-           <a href="">Register</a>
+        <button onclick="register()">Register</button>
 
-        </div> -->
-    
 </body>
+<script src="./script.js"></script>
 </html>
