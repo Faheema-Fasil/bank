@@ -93,7 +93,7 @@ function deposit() {
         alert("Deposit successful! New balance: " + accountDetails.balance);
         
    
-        document.getElementById('balance').innerHTML = `CURRENT BALANCE AMOUNT : ${accountDetails.balance}`;
+        document.getElementById('balance').innerHTML = `CURRENT BALANCE AMOUNT : ${accountDetails.balance}/-`;
     } else {
         alert("Account not found.");
     }
@@ -127,7 +127,7 @@ function withdraw() {
         localStorage.setItem(accno, JSON.stringify(accountDetails)); 
         
         alert("Withdrawal successful! New balance: " + accountDetails.balance);
-        document.getElementById('balance').innerHTML = `CURRENT BALANCE AMOUNT : ${accountDetails.balance}`;
+        document.getElementById('balance').innerHTML = `CURRENT BALANCE AMOUNT : ${accountDetails.balance} /-`;
     } else {
         alert("Account not found.");
     }
