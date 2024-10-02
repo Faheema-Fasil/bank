@@ -3,26 +3,6 @@ function login1() {
     window.location='./login.html'
 }
 
-// function login() {
-//     // Get the values from the input fields
-//     var accountNumber = document.getElementById("accno").value;
-//     var password = document.getElementById("passw").value;
-
-//     // Simple validation
-//     if (accountNumber === "" || password === "") {
-//         alert("Please enter both Account Number and Password.");
-//         return;
-//     }
-
-//     // Example: Simulate login validation (replace this with actual API call)
-//     if (accountNumber === "12345" && password === "password") {
-//         alert("Login successful!");
-//         window.location.href = "dashboard.html";  // Redirect to the dashboard
-//     } else {
-//         alert("Invalid Account Number or Password. Please try again.");
-//         window.location='./register.html'
-//     }
-// }
 function login() {
     var accno=document.getElementById('accno').value;
     var pass=document.getElementById('passw').value;
@@ -30,51 +10,122 @@ function login() {
         alert('Please enter both Account Number and Password.');
         return;
     }
-    if (accno&&pass in localStorage) {
-        alert("Login successful!");
-      window.location.href = "userpage.html";
-    }else{
-        alert("Invalid Account Number or Password. Please try again.");
-         window.location='./register.html'
+    var userAccount = localStorage.getItem(accno);
+    if (userAccount) {
+        var accountDetails = JSON.parse(userAccount);
+
+        if (accountDetails.password === pass) {
+            alert("Login successful!");
+            window.location.href = "userpage.html"; 
+        } else {
+            alert("Invalid password. Please try again.");
+        }
+    } else {
+        alert("Account not found. Please register.");
+        window.location = './register.html'; 
     }
 }
-// Function to handle registration
+
 function register() {
-    // Get values from registration input fields
+    
     var userName = document.getElementById("username").value;
     var accountNumber = document.getElementById("regAccno").value;
     var password = document.getElementById("regPassw").value;
  
 
     accountDetails={
-            // Get values from registration input fields
+        
             userName: userName,
         accountNumber: accountNumber,
         password: password,
         balance: 0
     }
-    if(accountNumber in localStorage){
-        alert("User already registered")
+    if (localStorage.getItem(accountNumber)) {
+        alert("User already registered.");
+        return;
     }
-    // Simple validation
+
     if (userName === "" || accountNumber === "" || password === "") {
         alert("Please fill in all fields.");
         return;
     }
-    localStorage.setItem(accountNumber, JSON.stringify(accountDetails))
+    localStorage.setItem(accountNumber, JSON.stringify(accountDetails));
 
-
-    // Example: Simulate registration process (replace this with actual API call)
     alert("Registration successful!");
-    window.location.href = "login.html";  // Redirect to login page after registration
+    window.location.href = "login.html"; 
 }
 
-// Function to redirect to the login page
+    
+
 function goToLogin() {
     window.location.href = './login.html';
 }
 
-// Function to redirect to the registration page
+
 function goToRegister() {
     window.location.href = './register.html';
+}
+function deposit() {
+    var accno = document.getElementById('accno').value; 
+    var depositAmount = parseFloat(document.getElementById('amount').value); 
+
+
+    if (isNaN(depositAmount) || depositAmount <= 0) {
+        alert("Please enter a valid deposit amount.");
+        return;
+    }
+
+
+    var userAccount = localStorage.getItem(accno);
+    
+    if (userAccount) { 
+        var accountDetails = JSON.parse(userAccount); 
+        accountDetails.balance += depositAmount; 
+        localStorage.setItem(accno, JSON.stringify(accountDetails)); 
+        
+        alert("Deposit successful! New balance: " + accountDetails.balance);
+        
+   
+        document.getElementById('balance').innerHTML = `CURRENT BALANCE AMOUNT : ${accountDetails.balance}`;
+    } else {
+        alert("Account not found.");
+    }
+}
+
+
+
+function withdraw() {
+    var accno = document.getElementById('withaccno').value; 
+    var withdrawAmount = parseFloat(document.getElementById('withdrawAmount').value); 
+
+  
+    if (isNaN(withdrawAmount) || withdrawAmount <= 0) {
+        alert("Please enter a valid withdrawal amount.");
+        return;
+    }
+
+  
+    var userAccount = localStorage.getItem(accno);
+    
+    if (userAccount) { 
+        var accountDetails = JSON.parse(userAccount); 
+        
+        
+        if (withdrawAmount > accountDetails.balance) {
+            alert("Insufficient funds. Current balance: " + accountDetails.balance);
+            return;
+        }
+        
+        accountDetails.balance -= withdrawAmount; 
+        localStorage.setItem(accno, JSON.stringify(accountDetails)); 
+        
+        alert("Withdrawal successful! New balance: " + accountDetails.balance);
+        document.getElementById('balance').innerHTML = `CURRENT BALANCE AMOUNT : ${accountDetails.balance}`;
+    } else {
+        alert("Account not found.");
+    }
+}
+function logout() {
+    localStorage.removeItem("userAccount"); 
+    window.location.href = './index.html';
 }

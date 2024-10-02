@@ -21,7 +21,7 @@
   
      *{
         font-family: "Kanit", sans-serif;
-        color: white;
+        
         
 
     }
@@ -185,6 +185,16 @@
   margin: 0;
   color: #ccc;
 }
+#balance{
+    border: 1px solid white;
+    margin:20px 19rem;
+    padding: 1rem;
+    border-radius: 5px;
+    box-shadow: 0px 0px 2px 2px rgba(255, 255, 255, 0.396);
+    font-weight: bold;
+    color: white;
+    font-size: 20px;
+}
 
 </style>
 <body>
@@ -201,7 +211,7 @@
          
         </div>
         <div class="nav3" >
-          <button>LogOut</button>
+          <button onclick="logout()">LogOut</button>
           
           
           
@@ -210,30 +220,36 @@
     <div class="content">
         <div class="user">
             <center>
-                <h1 style="padding-top: 20px;" id="weĺcome">Welcome User</h1>
-                <h5 style="padding-top: 20px; padding-bottom: 50px;">Online Banking Services
+                <h1 style="padding-top: 20px;color: white;" id="weĺcome">Welcome User</h1>
+                <h5 style="padding-top: 20px; padding-bottom: 50px;color: white;">Online Banking Services
                 </h5>
             </center>
         </div>
         <div class="service row">
             <div class="col-1"></div>
             <div class="col-5">
-                <center><h3 style="padding-bottom: 20px;">Deposite</h3></center>
+                <center><h3 style="padding-bottom: 20px;color: white;">Deposite</h3></center>
                 <div class="deposit">
-                    <input type="text" name="" id="" placeholder="Enter Amount">
-                    <input type="text" name="" id=""placeholder="Enter Account Number">
-                    <center><button>Deposit</button></center>
+                    <input type="text" name="" id="amount" placeholder="Enter Amount">
+                    <input type="text" name="" id="accno"placeholder="Enter Account Number">
+                    <center><button onclick="deposit()">Deposit</button></center>
                 </div>
             </div>
             <div class="col-5">
-                <center><h3 style="padding-bottom: 20px;">Withdraw</h3></center>
+                <center><h3 style="padding-bottom: 20px;color: white;">Withdraw</h3></center>
                 <div class="deposit">
-                    <input type="text" name="" id="" placeholder="Enter Amount">
-                    <input type="text" name="" id=""placeholder="Enter Account Number">
-                    <center><button>Withdraw</button></center>
+                    <input type="text" name="" id="withdrawAmount" placeholder="Enter Amount">
+                    <input type="text" name="" id="withaccno"placeholder="Enter Account Number">
+                    <center><button onclick="withdraw()">Withdraw</button></center>
+                    
             </div>
             <div class="col-1"></div>
         </div>
+        <center>
+            <div id="balance">
+                CURRENT BALANCE AMOUNT :
+            </div>
+        </center>
     </div>
     <footer>
         <div class="footer-container">
